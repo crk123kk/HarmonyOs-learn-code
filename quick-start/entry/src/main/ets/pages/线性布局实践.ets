@@ -21,7 +21,7 @@ struct Index {
         .alignItems(HorizontalAlign.Start)
         // 右侧
         // 这边不加 Column 其实也是可以的，但是个人觉得为了规范还是加上去，因为你要想，在一个Row中，是不同的Column组合而成的
-         Column(){
+        Column(){
           Row(){
             Image($r('app.media.tree'))
               .width(50)

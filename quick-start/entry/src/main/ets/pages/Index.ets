@@ -1,20 +1,25 @@
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello Harmony Os';
+  @State message: string = 'Hello Harmony';
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+    // 布局内容：先排版、再内容
+    Column({
+      // 控制组件间的距离
+      space: 10
+    }){
+      // 文本输入框
+      TextInput({
+        placeholder: '请输入用户名'
+      })
+      TextInput({
+        placeholder: '请输入密码'
+      })
+        .type(InputType.Password)
+      // 按钮
+      Button('登录')
+        .width(200)
     }
-    .height('100%')
-    .width('100%')
   }
 }
